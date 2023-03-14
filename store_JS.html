@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Apex Store</h1>
+    <form action="">
+      <h3>Your Shopping Bag....</h3>
+    <table class="table mb-3">
+        <thead>
+          <tr>
+            <th scope="col">Items</th>
+            <th scope="col">QTY</th>
+            <th scope="col">Price</th>
+            <th scope="col">Check</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <img src="image/shirt.jpg" alt="shirt" width="50%" height="120px">
+            </th>
+            <td>
+              <select name="" id="qty" onchange="totalPrice(this.value)">
+                <option >1</option>
+                <option >2</option>
+                <option >3</option>
+                <option >4</option>
+                <option >5</option>
+                <option >6</option>
+                <option >7</option>
+                <option >8</option>
+                <option>9</option>
+                <option >10</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" value="5500" readonly>
+            </td>
+            <td>
+              <input class="border-0" type="text" value="0" id="total" readonly>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              <img src="image/shoe.jpg" alt="shoe" width="50%" height="120px">
+            </th>
+            <td>
+              <select name="" id="qty1" onchange="totalPrice1(this.value)">
+                <option >1</option>
+                <option >2</option>
+                <option >3</option>
+                <option >4</option>
+                <option >5</option>
+                <option >6</option>
+                <option >7</option>
+                <option >8</option>
+                <option>9</option>
+                <option >10</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" value="4000" readonly>
+            </td>
+            <td>
+              <input class="border-0" type="text" value="0" id="total1" readonly>
+            </td>
+          </tr>
+            <th scope="row">
+              <img src="image/trousers.jpg" alt="trouser" width="50%" height="120px">
+            </th>
+            <td>
+              <select name="" id="qty2" onchange="totalPrice2(this.value)">
+                <option >1</option>
+                <option >2</option>
+                <option >3</option>
+                <option >4</option>
+                <option >5</option>
+                <option >6</option>
+                <option >7</option>
+                <option >8</option>
+                <option>9</option>
+                <option >10</option>
+                <option >11</option>
+                <option >12</option>
+                <option >13</option>
+                <option >14</option>
+                <option >15</option>
+                <option >16</option>
+                <option >17</option>
+                <option >18</option>
+                <option>19</option>
+                <option >20</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" value="1000" readonly>
+            </td>
+            <td>
+              <input class="border-0" type="text" value="0"  id="total2" readonly>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">
+              
+            </th>
+            <td>
+              
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger"  onclick="prizeDraw1()">Get Summary</button>
+            </td>
+            <td>
+              <label for=""> Total Price:</label>
+              <input class="border-0 justify-content-end" type="text" value="0" id="sumOfPrice" readonly>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+      <button type="button" class="btn btn-danger"  onclick="prizeDraw()">  Enter Prize Draw</button>
+    </div>
+    </form>
+
+  </div>
+
+    <script> 
+function totalPrice(value){
+  var total = value * 5500; 
+  document.getElementById('total').value = total;
+}
+
+function totalPrice1(value){
+  var total1 = value * 4000; 
+  document.getElementById('total1').value = total1;
+}
+
+
+  function totalPrice2(value){
+  var total2 = value * 1000; 
+  document.getElementById('total2').value = total2;
+}
+
+
+function prizeDraw(){
+  //code for quantity
+  var qty = document.getElementById('qty').value;
+  var qty1 = document.getElementById('qty1').value;
+  var qty2 = document.getElementById('qty2').value;
+  var quantityTotal = parseInt(qty) + parseInt(qty1) + parseInt(qty2);
+
+  //code for price
+   var total = document.getElementById('total').value;
+   var total1 = document.getElementById('total1').value;
+   var total2 = document.getElementById('total2').value;
+   var totalPriceCheck = parseInt(total) + parseInt(total1) + parseInt(total2);
+
+ 
+    if (totalPriceCheck >= 20000 && quantityTotal >= 10){
+      alert('Congrats! You are qaulified for our valentines day promo');
+    } else  alert("Thank you for shopping with us, you need to purchase an item worths 20,000 and more than 10 quantity items");
+
+  }
+  
+  //total price code
+ function prizeDraw1(){
+  var total = document.getElementById('total').value;
+  var total1 = document.getElementById('total1').value;
+  var total2 = document.getElementById('total2').value;
+  var totalPriceCheck = parseInt(total) + parseInt(total1) + parseInt(total2);
+      document.getElementById('sumOfPrice').value = totalPriceCheck;
+
+  }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>

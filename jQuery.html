@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    <style>
+      .disable{
+        border: red;
+      }
+    </style>
+  
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" >
+          <form action="">
+            <p id="error"></p>
+            <label for="fname">Enter your First Name</label> <br>
+            <input type="text" id="fname"> <br><br>
+            <label for="lastName">Enter your Last Name</label> <br>
+            <input type="text" id="lastName"> <br>
+            <label for="email">Enter your Email</label> <br>
+            <input type="text" id="email"><br><br>
+            <label for="password">Enter your password</label> <br>
+            <input type="password" id="password"> <br><br>
+            <label for="password1">Confirm password</label><br><br>
+            <input type="password" id="password1"><br><br>
+            <button type="button" id="btns" class="btn btn-danger">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+
+      <div>
+        <form action="">
+          <label for="text">Enter Your Name</label> <br>
+            <input type="text" id="email"><br>
+            <label for="password">Enter your password</label><br>
+            <input type="password" id="passInput" value="12344"> <br><br> 
+            <button type="button" id="showPass" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+      <div>
+        <div>
+          <form action="" id="myForm">
+            <label for="">Gender</label>
+            <input type="radio" name="gender" value="male" id="female">
+            <input type="radio" name="gender" value="female"id="male">
+            <button type="button" id="getGender" class="btn btn-danger">Submit</button>
+          </form>
+        </div>
+
+        <div>
+          <form action="" id="myForm">
+            <label for="">Gender</label>
+            <input type="checkbox" name="gender1" value="male" id="female">
+            <input type="checkbox" name="gender1" value="female"id="male">
+            <button type="button" id="getGender1" class="btn btn-danger">Submit</button>
+          </form>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-6">
+              <form action="">
+                <h1>Where did you hear about us?</h1>
+                <input type="checkbox" id="selectAll" class=" ">
+                <label for="">Select All</label> <br>
+                <input type="checkbox" value="Facebook" name="checkBoxes[]" class="checkBoxes">
+                <label for="">Facebook</label><br>
+                <input type="checkbox" value="Google Ads" name="checkBoxes[]" class="checkBoxes">
+                <label for="">Google Ads</label><br>
+                <input type="checkbox" value="News Paper" name="checkBoxes[]" class="checkBoxes">
+                <label for="">News Paper</label><br>
+                <input type="checkbox" value="Linda Ikeji's Blog" name="checkBoxes[]" class="checkBoxes">
+                <label for="">Linda Ikeji's Blog</label><br>
+                <input type="checkbox" value="Moat Academy" name="checkBoxes[]" class="checkBoxes">
+                <label for="">Moat Academy</label><br>
+                <input type="checkbox" value="Punch Online" name="checkBoxes[]" class="checkBoxes">
+                <label for="">Punch Online</label><br>
+                <input type="checkbox" value="Others" name="checkBoxes[]" class="checkBoxes">
+                <label for="">Others</label>  
+              </form>
+          </div>
+       
+            
+              <div class="col-6">
+                <form action="">
+                 <h1>AWS Customer Agreement</h1> 
+              <input type="text" placeholder="Full Name"> <br><br>
+              <input type="email" placeholder="Email Address"><br><br>
+              <input type="checkbox" class="confirm" name="checkBox1[]">
+              <label for="">I agree to terms and condition  </label> <br> <br>
+              <button class="btn btn-primary" id="show" disabled="disabled">Send Confirmation</button>
+            </form>
+            </div>
+         
+       </div>
+    </div>
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+    $(document).ready(function(){
+    $('#btns').click(function(){
+      var fname = $('#fname').val();
+      var Lname = $('#lastName').val();
+      var pwd = $('#password').val();
+      var pwd1 = $('#password1').val();
+      
+      if( pwd != pwd1){
+        $('#error').html('Invalid password')
+        $('#error').css('background-color', 'red')
+      }else if(pwd == pwd1){
+        $('password1').css('background-color', 'green')
+      };  
+    })
+
+  $('#showPass').click(function(){
+   var inputPass = $('#passInput');
+   if(inputPass.attr('type')=== 'password'){
+    inputPass.attr('type', 'text');
+   }
+      else{
+        inputPass.attr('type', 'password');
+      }
+  })
+  
+  $('#getGender').click(function(){
+   var a = ( $('input[name="gender"]:checked').val());
+  console.log(a);
+  })
+
+  $('#getGender1').click(function(){
+            var favorite = [];
+            var b =  $("input[name='gender1']:checked")
+                favorite.push($(this).val());
+                alert(favorite);
+   
+    })
+
+//select all code
+//     $("#selectAll").click(function (){
+//      if ($("#selectAll").is(':checked')){
+//         $(".checkBoxes").each(function (){
+//            $(this).prop("checked", true);
+//            });
+//         }else{
+//            $(".checkBoxes").each(function (){
+//                 $(this).prop("checked", false);
+//            });
+//         }
+//  });
+
+//select all code 2
+ $("#selectAll").click(function (){
+  var check_all = this.checked;
+  if(check_all == true){
+    $(".checkBoxes").prop("checked", true);
+  } else{
+    $(".checkBoxes").prop("checked", false);
+  }
+});
+
+  //disable and enable button validation code 1
+//     $(".confirm").click(function() {
+//     var checked_status = this.checked;
+//     if (checked_status == true) {
+//        $("#show").removeAttr("disabled");
+//     } else {
+//        $("#show").attr("disabled", "disabled");
+//     }
+//  });
+ 
+ //disable and enable button validation code 2
+ $(".confirm").click(function() {
+    var checked_status = this.checked;
+    if (checked_status == true) {
+       $("#show").attr("disabled", false);
+    } else {
+       $("#show").attr("disabled", true);
+    }
+ });
+   
+
+})
+    
+      
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+
+  
+   <!-- <div>
+    <div style="display: inline-flex;">
+    <button type="button" onclick="getBlue()">settings one</button>
+    <button type="button" onclick="getGreen()">settings two</button>
+    <div style="width: 100%;">
+    <p id="lateef">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt impedit veniam dolorem inventore. 
+      Magni totam asperiores earum eos minima pariatur maxime, 
+      at quibusdam corrupti deserunt labore est! Corrupti, expedita eveniet.
+    </p>
+  </div>
+  </div>
+
+   </div> -->
+
+   <!-- <form action="#" id="test">
+
+    <label for="write">Have you written exam yet</label>
+    <select   name="write" id="writeExam">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select> -->
+
+    <!-- <label for="center">please select exam center</label> <br>
+    <select   name="center" id="center"> <br> 
+      <option value="please select">please select exam center</option> <br>
+      <option value="Lagos">Lagos</option>
+      <option value="Osun">Osun</option>
+      <option value="Ogun">Ogun</option>
+      <option value="Oyo">Oyo</option>
+      <option value="Ondo">Ondo</option>
+    </select>
+    <button type="button" onclick="testResult()">Diagnose</button>
+
+   </form> -->
+<div class="container">
+   <h1>JavaScript Calculator</h1>
+   <form action="">
+    <label for="num">*Number 1</label><br>
+    <input type="number" value="num1" id="num1"><br><br>
+    <label for="num2">*Number 2</label><br>
+    <input type="number" value="num2" id="num2"><br><br>
+
+    <button class="btn btn-primary" type="button"  onclick="addBtn()">Add</button>
+    <button class="btn btn-warning" type="button" onclick="subBtn()">Subtract</button>
+    <button class="btn btn-info" type="button" onclick="divBtn()">%</button>
+   </form>
+  </div> 
+<div class="container mt-4">
+  <button class="btn btn-primary" type="button" onClick="clickBtn()">
+    <i class="fa-solid fa-thumbs-up"></i>
+    <span> 
+      <a id="click">0</a>
+    </span>
+  </button>
+  
+  
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script language="javascript" type="text/javascript">
+
+
+//   function testResult(){
+
+//     var writeExam = document.getElementById("writeExam").value;
+//     var center= document.getElementById("center").value;
+
+//    if (writeExam == "Yes" && center == "Lagos"){
+//       alert('You score 320');
+//   } else if (writeExam == "Yes" && center != "Lagos"){
+//     alert("You are not qualified");
+//   } else {
+//       alert("You are not qualified");
+//   }
+// }
+
+function addBtn() {
+  var num1 = document.getElementById('num1').value;
+  var num2 = document.getElementById('num2').value;
+  alert(parseInt(num1) + parseInt(num2));
+}
+function subBtn() {
+  var num1 = document.getElementById('num1').value;
+  var num2 = document.getElementById('num2').value;
+  alert(num1 - num2);
+}
+
+function divBtn() {
+  var num1 = document.getElementById('num1').value;
+  var num2 = document.getElementById('num2').value;
+  alert(num1 / num2);
+}
+
+var clicks = 0;
+  function clickBtn(){ 
+    clicks += 1; 
+    document.getElementById("click").innerText = clicks;  
+  }
+
+</script>
+</body>
+</html>
+

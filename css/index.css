@@ -1,0 +1,66 @@
+/* input{
+    border: 1px solid red;
+}
+#signup{
+    border-width: 20px;
+    color: #a941a4;
+}
+#st1{
+    font-style: normal;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+}
+#nd1{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Verdana;
+}
+#rd{
+    font-style: italic;
+    font-size: 20px;    
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+#traffic-red{
+    border-radius: 50%;
+    background-color: red;
+    border: 3px solid black;
+    width: 5%;
+    height: 70px;
+}
+
+#traffic-green{
+    border-radius: 50%;
+    background-color: green;
+    border: 3px solid black;
+    width: 5%;
+    height: 70px;
+}
+
+#traffic-yellow{
+    border-radius: 50%;
+    background-color: yellow;
+    border: 3px solid black;
+    width: 5%;
+    height: 70px;
+} */
+
+
+.bg{
+    background-image: url(/image/library.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    height: 300px;
+}
+
+h1{
+    color: azure;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    margin-top: 2rem;
+}

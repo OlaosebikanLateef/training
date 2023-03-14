@@ -1,0 +1,18 @@
+  #div1 {
+    width: 90%; 
+    height: 2800px; 
+    background-color:  rgb(179, 230, 230); 
+    margin-left:5rem;  
+    box-shadow: rgb(225, 189, 247)
+  }
+
+  #logo{
+    width: 15%; 
+    height: 8rem; 
+    float: left;
+  }
+
+  li {
+    display: inline; 
+    padding: 17px;
+  }
